@@ -1,0 +1,24 @@
+{
+  "name": "next-example",
+  "version": "1.0.0",
+  "description": "An example site using next js",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "static": "rm -rf out && next build && next export && touch out/.nojekyll",
+    "static:prod": "BASE_PATH=/next-example yarn static",
+    "deploy": "yarn static:prod && gh-pages -d out"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
